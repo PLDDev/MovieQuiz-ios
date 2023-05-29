@@ -4,6 +4,8 @@
 //
 //  Created by DANCECOMMANDER on 09.05.2023.
 //
+//k_6r5vvzy5
+//k_12345678
 
 import Foundation
 
@@ -13,7 +15,11 @@ protocol MoviesLoading {
 
 struct MoviesLoader: MoviesLoading {
     //MARK: - NetworkClient
-    private let networkClient = NetworkClient()
+    private let networkClient: NetworkRouting
+    
+    init(networkClient: NetworkRouting = NetworkClient()) {
+        self.networkClient = networkClient
+    }
     
     //MARK: - URL
     private var mostPopularMoviesUrl: URL {
